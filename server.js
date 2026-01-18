@@ -49,7 +49,7 @@ ${emoji} <b>${type}</b>
 async function checkWhale(address) {
   try {
     const response = await axios.post(
-      CONFIG.SOLANA_RPC
+      CONFIG.SOLANA_RPC,
       {
         jsonrpc: '2.0',
         id: 1,
