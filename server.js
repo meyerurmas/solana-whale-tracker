@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // Konfiguratsioon
 const CONFIG = {
-  HELIUS_API: process.env.HELIUS_API || 'YOUR_HELIUS_API_KEY',
+  SOLANA_RPC: process.env.SOLANA_RPC || 'https://api.mainnet-beta.solana.com',
   TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN || 'YOUR_BOT_TOKEN',
   TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID || 'YOUR_CHAT_ID',
   CHECK_INTERVAL: 300000, // 5 minutit
@@ -49,7 +49,7 @@ ${emoji} <b>${type}</b>
 async function checkWhale(address) {
   try {
     const response = await axios.post(
-      `https://mainnet.helius-rpc.com/?api-key=${CONFIG.HELIUS_API}`,
+      CONFIG.SOLANA_RPC
       {
         jsonrpc: '2.0',
         id: 1,
@@ -66,7 +66,7 @@ async function checkWhale(address) {
 
       // Analüüsi tehingut
       const txResponse = await axios.post(
-        `https://mainnet.helius-rpc.com/?api-key=${CONFIG.HELIUS_API}`,
+        CONFIG.SOLANA_RPC,
         {
           jsonrpc: '2.0',
           id: 1,
