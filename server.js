@@ -63,6 +63,7 @@ async function checkWhale(address) {
     for (const sig of signatures) {
       if (processedTx.has(sig.signature)) continue;
       processedTx.add(sig.signature);
+      await new Promise(r => setTimeout(r, 500));
 
       // Analüüsi tehingut
       const txResponse = await axios.post(
