@@ -10,8 +10,8 @@ const CONFIG = {
   SOLANA_RPC: process.env.SOLANA_RPC || 'https://api.mainnet-beta.solana.com',
   TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN || 'YOUR_BOT_TOKEN',
   TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID || 'YOUR_CHAT_ID',
-  CHECK_INTERVAL: 300000, // 5 minutit
-  MIN_SOL: 5
+  CHECK_INTERVAL: 900000, // 15 minutit
+  MIN_SOL: 10
 };
 
 // Jälgitavad vaalad
